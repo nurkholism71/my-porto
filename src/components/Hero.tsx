@@ -66,64 +66,26 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact: _onOpenContact }) => 
             {/* Central Portal Glass Sphere Container */}
             <div className="relative w-[290px] sm:w-[360px] h-[290px] sm:h-[360px] rounded-full border-2 border-emerald-400/40 p-2 shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-gradient-to-b from-emerald-500/10 to-transparent backdrop-blur-md overflow-hidden flex items-center justify-center group">
               
-              {/* Internal glowing circle with silhouette */}
+              {/* Internal glowing circle with real user portrait */}
               <div className="w-full h-full rounded-full bg-gradient-to-b from-[#062017] via-[#04130e] to-[#020907] relative overflow-hidden flex items-center justify-center">
                 
                 {/* Cyber Matrix Wireframe in portal background */}
-                <div className="absolute inset-0 opacity-30 cyber-grid" />
-                <div className="absolute top-0 right-0 w-full h-full bg-radial from-emerald-500/30 via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-0 opacity-25 cyber-grid z-0" />
+                
+                {/* User Portrait Photo */}
+                <img
+                  src="/profile.jpg"
+                  alt="Muhammad Nurcholis"
+                  className="w-full h-full object-cover object-top filter brightness-95 contrast-105 transition-transform duration-700 group-hover:scale-105 z-1"
+                />
 
-                {/* Developer Silhouette Illustration */}
-                <div className="absolute bottom-0 inset-x-0 flex justify-center items-end">
-                  <svg
-                    viewBox="0 0 300 300"
-                    className="w-full h-full max-h-[300px] object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#0d382c" />
-                        <stop offset="50%" stopColor="#08241c" />
-                        <stop offset="100%" stopColor="#04120e" />
-                      </linearGradient>
-                      <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#00ff87" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#05f190" stopOpacity="0.2" />
-                      </linearGradient>
-                    </defs>
-
-                    {/* Developer profile facing right with modern headphones / hoodie */}
-                    <path
-                      d="M60 300 C60 250, 100 210, 150 210 C200 210, 240 250, 240 300 Z"
-                      fill="url(#hoodieGrad)"
-                      stroke="#10b981"
-                      strokeWidth="1.5"
-                    />
-                    <circle cx="150" cy="155" r="48" fill="#08241c" stroke="#10b981" strokeWidth="1.5" />
-                    
-                    {/* Headset arc */}
-                    <path
-                      d="M110 155 C110 110, 190 110, 190 155"
-                      stroke="#34d399"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                    />
-                    <rect x="105" y="145" width="10" height="24" rx="5" fill="#10b981" />
-                    <rect x="185" y="145" width="10" height="24" rx="5" fill="#10b981" />
-
-                    {/* Glowing highlight edge */}
-                    <path
-                      d="M150 115 C175 115, 195 135, 195 160 C195 190, 175 205, 150 205"
-                      stroke="url(#glowLine)"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </div>
+                {/* Cyber Emerald Ambient Gradient Blend Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020d09] via-emerald-950/20 to-transparent opacity-75 z-2 pointer-events-none" />
+                <div className="absolute inset-0 bg-radial from-transparent via-emerald-900/10 to-[#03120d]/80 z-2 pointer-events-none" />
 
                 {/* Artistic overlay text inside circle: "Build Learn Create Impact" */}
-                <div className="absolute top-6 left-6 text-left pointer-events-none">
-                  <span className="font-serif italic text-emerald-300/80 text-sm sm:text-base font-semibold tracking-wide drop-shadow-[0_0_8px_rgba(16,185,129,0.8)] block leading-tight">
+                <div className="absolute top-6 left-6 text-left pointer-events-none z-3">
+                  <span className="font-serif italic text-emerald-300/90 text-sm sm:text-base font-semibold tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] block leading-tight text-shadow">
                     Build<br />
                     Learn<br />
                     Create<br />
@@ -132,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact: _onOpenContact }) => 
                 </div>
 
                 {/* Inner glass refraction highlight */}
-                <div className="absolute inset-0 rounded-full border border-emerald-400/30 pointer-events-none" />
+                <div className="absolute inset-0 rounded-full border-2 border-emerald-400/40 pointer-events-none z-4 shadow-[inset_0_0_20px_rgba(16,185,129,0.3)]" />
               </div>
             </div>
 
