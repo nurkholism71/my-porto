@@ -320,8 +320,6 @@ export const portfolioData = {
   techStack: [
     { name: "TypeScript", code: "Ts", color: "#3178c6", bg: "rgba(49, 120, 198, 0.15)", category: "frontend", description: "Type-safe modern web development" },
     { name: "JavaScript", code: "JS", color: "#f7df1e", bg: "rgba(247, 223, 30, 0.15)", category: "frontend", description: "Dynamic scripting & interactive web" },
-    { name: "HTML5", code: "5", color: "#e34f26", bg: "rgba(227, 79, 38, 0.15)", category: "frontend", description: "Semantic structure & web markup" },
-    { name: "CSS3", code: "3", color: "#1572b6", bg: "rgba(21, 114, 182, 0.15)", category: "frontend", description: "Modern responsive layouts, Flexbox & Grid" },
     { name: "Next.js", code: "N", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "frontend", description: "React framework for production & SSR" },
     { name: "React", code: "⚛", color: "#61dafb", bg: "rgba(97, 218, 251, 0.15)", category: "frontend", description: "Component-driven interactive UI library" },
     { name: "Kotlin", code: "Kt", color: "#7f52ff", bg: "rgba(127, 82, 255, 0.15)", category: "mobile", description: "Modern Android application development" },
@@ -335,6 +333,7 @@ export const portfolioData = {
     { name: "Laravel", code: "⛛", color: "#ff2d20", bg: "rgba(255, 45, 32, 0.15)", category: "backend", description: "Elegant PHP framework & MVC architecture" },
     { name: "PostgreSQL", code: "🐘", color: "#4169e1", bg: "rgba(65, 105, 225, 0.15)", category: "database", description: "Advanced relational SQL database" },
     { name: "MySQL", code: "🐬", color: "#00758f", bg: "rgba(0, 117, 143, 0.15)", category: "database", description: "Robust relational database" },
+    { name: "Redis", code: "🔴", color: "#dc382d", bg: "rgba(220, 56, 45, 0.15)", category: "database", description: "High-speed in-memory caching, message broker & key-value store" },
     { name: "Supabase", code: "⚡", color: "#3ecf8e", bg: "rgba(62, 207, 142, 0.15)", category: "database", description: "Open source Firebase backend alternative" },
     { name: "Docker", code: "🐳", color: "#2496ed", bg: "rgba(36, 150, 237, 0.15)", category: "devops", description: "Containerized deployment & scaling" },
     { name: "Railway", code: "🚂", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "devops", description: "Seamless infrastructure deployment" },
