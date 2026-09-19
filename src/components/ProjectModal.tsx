@@ -56,17 +56,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Mockup Preview Area */}
-        <div className="w-full rounded-2xl bg-[#06120e] border border-emerald-500/25 p-5 mb-6 shadow-inner relative overflow-hidden">
-          <div className="flex items-center justify-between border-b border-emerald-500/15 pb-3 mb-4">
+        <div className="w-full rounded-2xl bg-[#06120e] border border-emerald-500/25 p-4 sm:p-5 mb-5 sm:mb-6 shadow-inner relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 border-b border-emerald-500/15 pb-2.5 sm:pb-3 mb-4 text-left">
             <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-red-500/80" />
-              <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-              <span className="ml-2 text-xs font-mono text-emerald-400/80">
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 shrink-0" />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 shrink-0" />
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80 shrink-0" />
+              <span className="ml-1.5 text-xs font-mono text-emerald-400/90 font-medium">
                 app.{project.id}.io
               </span>
             </div>
-            <span className="text-[11px] font-mono text-slate-400">Preview Engine v2.4</span>
+            <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 pl-6 sm:pl-0">
+              Preview Engine v2.4
+            </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
