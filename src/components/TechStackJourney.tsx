@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import type { TechItem } from '../data/portfolioData';
 import { Shield, BarChart3, Cpu, ArrowRight, Sparkles } from 'lucide-react';
 
 export const TechStackJourney: React.FC = () => {
   const [activeTech, setActiveTech] = useState<TechItem | null>(null);
+  const [techCategory, setTechCategory] = useState<string>('all');
+
+  const categories = ['all', 'mobile', 'frontend', 'backend', 'database', 'devops'];
+
+  const filteredTech = techCategory === 'all'
+    ? portfolioData.techStack
+    : portfolioData.techStack.filter(t => t.category === techCategory);
 
   const getJourneyIcon = (iconName: string) => {
     switch (iconName) {
@@ -32,21 +39,40 @@ export const TechStackJourney: React.FC = () => {
               TECH STACK
             </div>
             
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-8">
-              Tools I <span className="text-emerald-400">Work With</span>
-            </h2>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Tools I <span className="text-emerald-400">Work With</span>
+              </h2>
 
-            {/* 4-column Grid of Tech Stack Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {portfolioData.techStack.map((tech) => (
+              {/* Category Filter Pills */}
+              <div className="flex flex-wrap items-center gap-1.5">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setTechCategory(cat)}
+                    className={`px-2.5 py-1 rounded-full text-[10px] font-semibold capitalize transition-all cursor-pointer ${
+                      techCategory === cat
+                        ? 'bg-emerald-500/25 text-emerald-300 border border-emerald-400/50 shadow-[0_0_10px_rgba(16,185,129,0.25)]'
+                        : 'bg-emerald-950/30 text-slate-400 border border-emerald-500/10 hover:text-white hover:bg-emerald-900/40'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Grid of Tech Stack Pills */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5">
+              {filteredTech.map((tech) => (
                 <div
                   key={tech.name}
                   onMouseEnter={() => setActiveTech(tech)}
                   onMouseLeave={() => setActiveTech(null)}
-                  className="glass-panel glass-panel-hover rounded-xl p-3 flex items-center gap-2.5 border border-emerald-500/20 hover:border-emerald-400/50 group cursor-default transition-all duration-200"
+                  className="glass-panel glass-panel-hover rounded-xl p-2.5 flex items-center gap-2.5 border border-emerald-500/20 hover:border-emerald-400/50 group cursor-default transition-all duration-200"
                 >
                   <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 shadow-inner group-hover:scale-110 transition-transform"
+                    className="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-[11px] shrink-0 shadow-inner group-hover:scale-110 transition-transform"
                     style={{ backgroundColor: tech.bg, color: tech.color }}
                   >
                     {tech.code}
@@ -64,18 +90,18 @@ export const TechStackJourney: React.FC = () => {
             </div>
 
             {/* Active Tech Tooltip / Info bar */}
-            <div className="mt-6 p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/15 min-h-[56px] flex items-center">
+            <div className="mt-5 p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-500/15 min-h-[52px] flex items-center">
               {activeTech ? (
-                <div className="flex items-center gap-3">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                <div className="flex items-center gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
                   <p className="text-xs text-slate-200">
                     <strong className="text-emerald-300">{activeTech.name}:</strong> {activeTech.description}
                   </p>
                 </div>
               ) : (
                 <div className="flex items-center gap-2 text-xs text-slate-400">
-                  <Sparkles className="w-3.5 h-3.5 text-emerald-400/60" />
-                  <span>Hover over any technology badge to view specialized domain experience.</span>
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400/60 shrink-0" />
+                  <span>Hover or tap any badge to view domain capabilities.</span>
                 </div>
               )}
             </div>

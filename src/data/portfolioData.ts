@@ -34,7 +34,7 @@ export interface TechItem {
   code: string;
   color: string;
   bg: string;
-  category: 'frontend' | 'backend' | 'database' | 'devops';
+  category: 'frontend' | 'backend' | 'database' | 'devops' | 'mobile';
   description: string;
 }
 
@@ -319,20 +319,27 @@ export const portfolioData = {
 
   techStack: [
     { name: "TypeScript", code: "Ts", color: "#3178c6", bg: "rgba(49, 120, 198, 0.15)", category: "frontend", description: "Type-safe modern web development" },
-    { name: "Next.js", code: "N", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "frontend", description: "React framework for production" },
+    { name: "JavaScript", code: "JS", color: "#f7df1e", bg: "rgba(247, 223, 30, 0.15)", category: "frontend", description: "Dynamic scripting & interactive web" },
+    { name: "HTML5", code: "5", color: "#e34f26", bg: "rgba(227, 79, 38, 0.15)", category: "frontend", description: "Semantic structure & web markup" },
+    { name: "CSS3", code: "3", color: "#1572b6", bg: "rgba(21, 114, 182, 0.15)", category: "frontend", description: "Modern responsive layouts, Flexbox & Grid" },
+    { name: "Next.js", code: "N", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "frontend", description: "React framework for production & SSR" },
+    { name: "React", code: "⚛", color: "#61dafb", bg: "rgba(97, 218, 251, 0.15)", category: "frontend", description: "Component-driven interactive UI library" },
+    { name: "Kotlin", code: "Kt", color: "#7f52ff", bg: "rgba(127, 82, 255, 0.15)", category: "mobile", description: "Modern Android application development" },
+    { name: "Swift", code: "🦅", color: "#f05138", bg: "rgba(240, 81, 56, 0.15)", category: "mobile", description: "Native iOS & Apple ecosystem development" },
     { name: "Node.js", code: "⬢", color: "#339933", bg: "rgba(51, 153, 51, 0.15)", category: "backend", description: "High-throughput runtime engine" },
     { name: "Python", code: "🐍", color: "#3776ab", bg: "rgba(55, 118, 171, 0.15)", category: "backend", description: "AI, data analytics & automation" },
+    { name: "Go / Golang", code: "Go", color: "#00add8", bg: "rgba(0, 173, 216, 0.15)", category: "backend", description: "Concurrent cloud backend & microservices" },
+    { name: "Java", code: "☕", color: "#ed8b00", bg: "rgba(237, 139, 0, 0.15)", category: "backend", description: "Enterprise OOP backend & system design" },
+    { name: "C++", code: "C++", color: "#00599c", bg: "rgba(0, 89, 156, 0.15)", category: "backend", description: "High-performance systems & algorithmic core" },
+    { name: "PHP", code: "PHP", color: "#777bb4", bg: "rgba(119, 123, 180, 0.15)", category: "backend", description: "Server-side web scripting & APIs" },
+    { name: "Laravel", code: "⛛", color: "#ff2d20", bg: "rgba(255, 45, 32, 0.15)", category: "backend", description: "Elegant PHP framework & MVC architecture" },
     { name: "PostgreSQL", code: "🐘", color: "#4169e1", bg: "rgba(65, 105, 225, 0.15)", category: "database", description: "Advanced relational SQL database" },
-    { name: "Supabase", code: "⚡", color: "#3ecf8e", bg: "rgba(62, 207, 142, 0.15)", category: "database", description: "Open source Firebase alternative" },
+    { name: "MySQL", code: "🐬", color: "#00758f", bg: "rgba(0, 117, 143, 0.15)", category: "database", description: "Robust relational database" },
+    { name: "Supabase", code: "⚡", color: "#3ecf8e", bg: "rgba(62, 207, 142, 0.15)", category: "database", description: "Open source Firebase backend alternative" },
     { name: "Docker", code: "🐳", color: "#2496ed", bg: "rgba(36, 150, 237, 0.15)", category: "devops", description: "Containerized deployment & scaling" },
+    { name: "Railway", code: "🚂", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "devops", description: "Seamless infrastructure deployment" },
     { name: "Vercel", code: "▲", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "devops", description: "Edge hosting & serverless computing" },
     { name: "Cloudflare", code: "☁", color: "#f38020", bg: "rgba(243, 128, 32, 0.15)", category: "devops", description: "DDoS mitigation, CDN & DNS" },
-    { name: "Laravel", code: "⛛", color: "#ff2d20", bg: "rgba(255, 45, 32, 0.15)", category: "backend", description: "Elegant PHP web framework" },
-    { name: "MySQL", code: "🐬", color: "#00758f", bg: "rgba(0, 117, 143, 0.15)", category: "database", description: "Robust relational database" },
-    { name: "JavaScript", code: "JS", color: "#f7df1e", bg: "rgba(247, 223, 30, 0.15)", category: "frontend", description: "Dynamic scripting & interactive web" },
-    { name: "React", code: "⚛", color: "#61dafb", bg: "rgba(97, 218, 251, 0.15)", category: "frontend", description: "Component-driven UI library" },
-    { name: "Railway", code: "🚂", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "devops", description: "Seamless infrastructure deployment" },
-    { name: "PHP", code: "PHP", color: "#777bb4", bg: "rgba(119, 123, 180, 0.15)", category: "backend", description: "Server-side web scripting" },
     { name: "Git & GitHub", code: "🐙", color: "#f05032", bg: "rgba(240, 80, 50, 0.15)", category: "devops", description: "Version control & CI/CD workflows" }
   ] as TechItem[],
 

@@ -12,7 +12,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   if (!project || typeof document === 'undefined') return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div className="fixed inset-0 z-[99999] flex items-start sm:items-center justify-center p-3 sm:p-6 overflow-y-auto overflow-x-hidden pt-8 sm:pt-6 no-scrollbar">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-[#020505]/90 backdrop-blur-xl transition-opacity animate-in fade-in duration-300"
@@ -20,7 +20,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       />
 
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0a1814] border border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-emerald-950/70 z-10 animate-in zoom-in-95 duration-200 my-auto">
+      <div className="relative w-full max-w-3xl max-h-[88vh] sm:max-h-[90vh] overflow-y-auto overflow-x-hidden bg-[#0a1814] border-2 border-emerald-500/50 rounded-3xl p-5 sm:p-8 shadow-2xl shadow-emerald-950/90 z-10 animate-in zoom-in-95 duration-200 my-auto no-scrollbar">
         
         {/* Glow Header Accent */}
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-300 to-emerald-500" />
@@ -29,26 +29,27 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full text-slate-400 hover:text-white bg-emerald-950/50 hover:bg-emerald-900/60 border border-emerald-500/30 transition-colors cursor-pointer"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 rounded-full text-slate-300 hover:text-white bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 shadow-lg transition-colors cursor-pointer z-30"
+          aria-label="Close modal"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
         {/* Header */}
-        <div className="flex items-start gap-4 mb-6">
-          <div className={`w-14 h-14 rounded-2xl ${project.iconBg} flex items-center justify-center text-white font-extrabold text-2xl shadow-lg border border-white/20`}>
+        <div className="flex items-start gap-3.5 sm:gap-4 mb-5 sm:mb-6 pr-10 sm:pr-12 text-left">
+          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${project.iconBg} flex items-center justify-center text-white font-extrabold text-xl sm:text-2xl shadow-lg border border-white/20 shrink-0`}>
             {project.icon}
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                 {project.category}
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
+            <h2 className="text-xl sm:text-3xl font-black text-white mt-1">
               {project.title}
             </h2>
-            <p className="text-sm text-slate-300 font-medium">
+            <p className="text-xs sm:text-sm text-slate-300 font-medium">
               {project.tagline}
             </p>
           </div>
