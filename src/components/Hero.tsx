@@ -79,20 +79,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact: _onOpenContact }) => 
                   className="w-full h-full object-cover object-top filter brightness-95 contrast-105 transition-transform duration-700 group-hover:scale-105 z-1"
                 />
 
-                {/* Cyber Emerald Ambient Gradient Blend Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020d09] via-emerald-950/20 to-transparent opacity-75 z-2 pointer-events-none" />
-                <div className="absolute inset-0 bg-radial from-transparent via-emerald-900/10 to-[#03120d]/80 z-2 pointer-events-none" />
-
-                {/* Artistic overlay text inside circle: "Build Learn Create Impact" */}
-                <div className="absolute top-6 left-6 text-left pointer-events-none z-3">
-                  <span className="font-serif italic text-emerald-300/90 text-sm sm:text-base font-semibold tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] block leading-tight text-shadow">
-                    Build<br />
-                    Learn<br />
-                    Create<br />
-                    Impact
-                  </span>
-                </div>
-
                 {/* Inner glass refraction highlight */}
                 <div className="absolute inset-0 rounded-full border-2 border-emerald-400/40 pointer-events-none z-4 shadow-[inset_0_0_20px_rgba(16,185,129,0.3)]" />
               </div>
