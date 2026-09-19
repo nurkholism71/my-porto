@@ -320,6 +320,8 @@ export const portfolioData = {
   techStack: [
     { name: "TypeScript", code: "Ts", color: "#3178c6", bg: "rgba(49, 120, 198, 0.15)", category: "frontend", description: "Type-safe modern web development" },
     { name: "JavaScript", code: "JS", color: "#f7df1e", bg: "rgba(247, 223, 30, 0.15)", category: "frontend", description: "Dynamic scripting & interactive web" },
+    { name: "HTML5", code: "5", color: "#e34f26", bg: "rgba(227, 79, 38, 0.15)", category: "frontend", description: "Semantic structure & modern web markup" },
+    { name: "CSS3", code: "3", color: "#1572b6", bg: "rgba(21, 114, 182, 0.15)", category: "frontend", description: "Responsive layouts, Flexbox, Grid & Animations" },
     { name: "Next.js", code: "N", color: "#ffffff", bg: "rgba(255, 255, 255, 0.15)", category: "frontend", description: "React framework for production & SSR" },
     { name: "React", code: "⚛", color: "#61dafb", bg: "rgba(97, 218, 251, 0.15)", category: "frontend", description: "Component-driven interactive UI library" },
     { name: "Kotlin", code: "Kt", color: "#7f52ff", bg: "rgba(127, 82, 255, 0.15)", category: "mobile", description: "Modern Android application development" },
