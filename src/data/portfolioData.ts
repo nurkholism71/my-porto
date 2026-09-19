@@ -1,4 +1,4 @@
-﻿export interface Project {
+export interface Project {
   id: string;
   title: string;
   tagline: string;
@@ -75,7 +75,7 @@ export const portfolioData = {
       github: "https://github.com/nurcholis",
       linkedin: "https://linkedin.com/in/nurcholis",
       youtube: "https://youtube.com/@nurcholis",
-      email: "mailto:contact@nurcholis.dev",
+      email: "mailto:nurcholism51@gmail.com",
       twitter: "https://x.com/nurcholis"
     }
   },

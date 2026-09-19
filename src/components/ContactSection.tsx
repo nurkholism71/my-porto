@@ -19,12 +19,30 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/nurcholism51@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+          _subject: `New Portfolio Message from ${formState.name} (${formState.email})`,
+          _template: "table"
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission network response was not ok");
+      }
+
       setSubmitted(true);
       
       // Trigger festive emerald confetti
@@ -39,8 +57,29 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         setSubmitted(false);
         setFormState({ name: '', email: '', message: '' });
         onCloseModal();
-      }, 2500);
-    }, 1000);
+      }, 3000);
+    } catch (error) {
+      console.error("Form error, triggering fallback mailto:", error);
+      // Fallback in case of adblocker or fetch block
+      window.open(
+        `mailto:nurcholism51@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(formState.name)}&body=${encodeURIComponent(formState.message + "\n\nFrom: " + formState.name + " (" + formState.email + ")")}`,
+        "_blank"
+      );
+      setSubmitted(true);
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#00ff87', '#10b981', '#34d399', '#ffffff']
+      });
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormState({ name: '', email: '', message: '' });
+        onCloseModal();
+      }, 3000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
